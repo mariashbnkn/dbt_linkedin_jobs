@@ -1,0 +1,21 @@
+name: dbt Deploy
+on:
+  push:
+    branches: [main]
+
+jobs:
+  dbt-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: "3.12.7" # "3.10"
+      - run: pip install dbt-postgres
+      - run: dbt deps
+      - run: dbt run --target prod
+        env:
+          POSTGRES_HOST: ${{ secrets.PROD_POSTGRES_HOST }}
+          POSTGRES_USER: ${{ secrets.PROD_POSTGRES_USER }}
+          POSTGRES_PASSWORD: ${{ secrets.PROD_POSTGRES_PASSWORD }}
+          POSTGRES_DB: ${{ secrets.PROD_POSTGRES_DB }}

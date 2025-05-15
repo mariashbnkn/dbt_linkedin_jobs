@@ -1,0 +1,13 @@
+version: 2
+
+sources:
+  - name: dbt
+    database: test_dbt
+    schema: dbt
+    tables:
+      - name: users
+      - name: raw_jobs
+
+#  - name: raw
+#    tables:
+#      - name: raw_jobs

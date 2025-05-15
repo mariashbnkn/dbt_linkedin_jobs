@@ -5,8 +5,6 @@ dbt init pg_dbt
 dbt debug  # проверка подключения
 ```
 
-Profile pg_dbt written to /home/mary/.dbt/profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
-
 ```bash
 dbt build
 dbt compile

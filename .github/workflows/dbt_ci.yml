@@ -23,6 +23,7 @@ jobs:
           POSTGRES_PASSWORD: ${{ secrets.POSTGRES_PASSWORD }}
           POSTGRES_DB: ${{ secrets.POSTGRES_DB }}
         run: |
+          cd pg_dbt
           dbt deps
           dbt run --target dev
           dbt test --target dev

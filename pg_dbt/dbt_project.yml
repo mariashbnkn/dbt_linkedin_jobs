@@ -36,6 +36,7 @@ models:
       +materialized: view
       tags: "linkedIn jobs"
 
-    +tags: dev # Все модели по умолчанию — для dev
-    marts:
-      +tags: prod # Витрины — только для prod
+      +tags: dev # Все модели по умолчанию — для dev
+
+      marts:
+        +tags: prod # Витрины — только для prod

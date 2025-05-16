@@ -18,6 +18,7 @@ jobs:
 
       - name: Run tests
         env:
+          DBT_PROFILES_DIR: ./.dbt_git
           POSTGRES_HOST: ${{ secrets.POSTGRES_HOST }}
           POSTGRES_USER: ${{ secrets.POSTGRES_USER }}
           POSTGRES_PASSWORD: ${{ secrets.POSTGRES_PASSWORD }}

@@ -7,7 +7,3 @@ sources:
     tables:
       - name: users
       - name: raw_jobs
-
-#  - name: raw
-#    tables:
-#      - name: raw_jobs
